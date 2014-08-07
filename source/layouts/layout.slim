@@ -18,6 +18,14 @@ html
 
 	body class='#{page_classes}'
 		div class="container"
+			div class="alert-container hidden"
+				br
+				div class="alert alert-success fade in" role="alert"
+					button type="button" class="close" data-dismiss="alert"
+						span aria-hidden="true" ×
+						span class="sr-only" Close
+					h4 Ура! Ваша заявка отправлена!
+					p Мы скоро рассмотрим вашу заявку.
 			div class="row"
 				div class="col-xs-12"
 					div class="bg-img"
@@ -51,7 +59,7 @@ html
 							div class="main-menu"
 								ul class="nav nav-pills nav-justified"
 									li
-										a class="text-center" href="main.html"
+										a class="text-center" href="index.html"
 											strong Главная
 									li
 										a class="text-center" href="about.html"
@@ -90,11 +98,11 @@ html
 									label class="xs" for="#phone" Введите телефон:
 									input class="form-control" id="phone" name="phone" required="true"
 								div class="form-group"
-									button type="submit" class="btn btn-success btn-block" Оставить заявку
+									button type="submit" class="btn btn-success btn-block btn-submit" Оставить заявку
 		main role="main"
 			== yield
 
-		form class="modal modal-big fade" id="modal-call" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+		form class="form modal modal-big fade" id="modal-call" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
 			div class="modal-dialog"
 				div class="modal-content"
 					div class="modal-header"
@@ -117,7 +125,7 @@ html
 								div class="col-xs-5 col-xs-offset-1"
 									button type="button" class="btn btn-default btn-block" data-dismiss="modal" Закрыть
 								div class="col-xs-5"
-									button type="submit" class="btn btn-success btn-block" Отправить
+									button type="submit" class="btn btn-success btn-block btn-submit" Отправить
 		footer class="footer"
 			div class="container"
 				div class="row"
@@ -135,7 +143,7 @@ html
 							br
 							| Email:
 							a href="#"  vservis@bancorp.ru
-		== javascript_include_tag 'jquery-1.11.1.min', 'bootstrap.min', 'vendor/swiper/idangerous.swiper', '/js/vendor/fancybox/jquery.fancybox', 'all'
+		== javascript_include_tag 'jquery-1.11.1.min', 'bootstrap.min', 'vendor/swiper/idangerous.swiper', '/js/vendor/fancybox/jquery.fancybox', 'js/vendor/jquery.jqgoogleforms.min.js', 'all'
 		<!--[if lt IE 10]>
 			<script src="js/textshadow.js"></script>
 			<script src="js/all-ie8.js"></script>

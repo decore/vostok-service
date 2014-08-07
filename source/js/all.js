@@ -21,4 +21,19 @@ $(document).ready(function(){
     $('body').toggleClass('active');
   });
 
+  var googleForm = $(window).jqGoogleForms({"formKey": "1LljH0y7QgHBDCVl8nNPzO_xms6sGQ3FZsyzdC9VjWvI"});
+  $('.form .btn-submit').click(function(e){
+    e.preventDefault();
+    var form = $(this).parents('.form');
+    var name = form.find('#name').val();
+    var phone = form.find('#phone').val();
+    googleForm.sendFormData({
+        "entry.860096774": name,
+        "entry.68559078": phone
+    });
+    if (name && phone) {
+      $('.alert-container').removeClass('hidden');
+    }
+    $('.modal').modal('hide');
+  });
 });
