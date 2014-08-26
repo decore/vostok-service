@@ -16,6 +16,12 @@ $(document).ready(function(){
 
   $(".fancybox").fancybox();
 
+  $(".footable").footable({
+    breakpoints: {
+      tablet: 800
+    }
+  });
+
   $('.menu-toggle').click(function(){
     $('body').toggleClass('active');
   });
